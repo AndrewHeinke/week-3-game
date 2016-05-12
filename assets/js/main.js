@@ -89,9 +89,9 @@ window.onload = function () {
               return;
       }
 
-      for (var i = 0; i < targetWord.length; i++) {
+      for (var j = 0; j < targetWord.length; j++) {
                 if (targetWord.indexOf(userGuess) === -1) {
-                    lettersGuessed.push(userGuess)
+                    lettersGuessed.push(userGuess);
                     guessesLeft--;
                     break;
                 }
@@ -100,13 +100,15 @@ window.onload = function () {
       // see if game is over, user guessed word or ran out of guesses
       if (letterCount === 0) {
         wins++;
-        document.querySelector("h2").innerHTML = "You Won! Play again, ya gotta catch em all!";
+        document.querySelector("h2").innerHTML = "You Won! Ya gotta catch em all!";
+        document.querySelector("#test1").innerHTML = "The Pokemon was " + targetWord + ", Play again...";
         //todo show winner image if have time
         document.querySelector("#resetWrapper").style.display = "none";
         setTimeout(resetHangman, 2500);
       } else if (guessesLeft === 0) {
           losses++;
-          document.querySelector("h2").innerHTML = "You Lost! Play again, but try harder this time.";
+          document.querySelector("h2").innerHTML = "You Lost! Try harder next time.";
+          document.querySelector("#test1").innerHTML = "The Pokemon was " + targetWord + ", Play again...";
           //todo show loser image here if you have time
           document.querySelector("#resetWrapper").style.display = "none";
           setTimeout(resetHangman, 2500);
@@ -118,9 +120,9 @@ window.onload = function () {
         document.querySelector('#yourGuesses').innerHTML = "Letters Guessed: " + lettersGuessed.join(", ");
     }
 
-  }
+  };
 
 
 
 
-}
+};
