@@ -11,7 +11,7 @@ window.onload = function () {
   var losses = 0;
   var lettersGuessed = [];
   var correctLetters = [];
-  var wordBank = ['bulbasaur', 'ivysaur', 'venasaur', 'charmander', 'charmeleon', 'charizard', 'squirtle', 'wartortle', 'blastoise', 'rapidash', 'articuno', 'ivysaur', 'nidoqueen', 'weedle', 'beedrill', 'ekans', 'caterpie', 'metapod', 'butterfree', 'kakuna', 'pidgey', 'snorlax', 'rattata', 'raticate', 'spearow', 'pikachu', 'sandslash', 'nidoqueen', 'nidoking', 'gloom', 'psyduck', 'vulpix', 'golbat', 'parasect', 'diglett', 'machop', 'bellsprout', 'dewgong', 'muk', 'gastly', 'gengar', 'krabby', 'voltorb', 'electrode', 'rhyhorn', 'chansey'];
+  var wordBank = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidorina", "Nidoqueen", "Nidoran", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"];
 
   //randomly select index out of wordBank array
   var targetWord = wordBank[Math.floor(Math.random() * wordBank.length)].toLowerCase();
@@ -101,14 +101,14 @@ window.onload = function () {
       if (letterCount === 0) {
         wins++;
         document.querySelector("h2").innerHTML = "You Won! Ya gotta catch em all!";
-        document.querySelector("#test1").innerHTML = "The Pokemon was " + targetWord + ", Play again...";
+        document.querySelector("#test1").innerHTML = "The Pokemon was " + targetWord.toUpperCase() + ", Play again...";
         //todo show winner image if have time
         document.querySelector("#resetWrapper").style.display = "none";
         setTimeout(resetHangman, 2500);
       } else if (guessesLeft === 0) {
           losses++;
           document.querySelector("h2").innerHTML = "You Lost! Try harder next time.";
-          document.querySelector("#test1").innerHTML = "The Pokemon was " + targetWord + ", Play again...";
+          document.querySelector("#test1").innerHTML = "The Pokemon was " + targetWord.toUpperCase() + ", Play again...";
           //todo show loser image here if you have time
           document.querySelector("#resetWrapper").style.display = "none";
           setTimeout(resetHangman, 2500);
